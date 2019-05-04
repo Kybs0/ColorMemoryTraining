@@ -1,0 +1,206 @@
+﻿<UserControl x:Class="PictureMemoryTraining.Views.MemoryPictureListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PictureMemoryTraining.Views"
+             xmlns:models="clr-namespace:PictureMemoryTraining.Views.Models"
+             xmlns:helper="clr-namespace:PictureMemoryTraining.Helper"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" x:Name="TheMemoryPictureListControl">
+    <UserControl.Resources>
+        <Style x:Key="Style.ListBox" TargetType="ListBox">
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Rows="4" Columns="4"></UniformGrid>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <EventSetter Event="PreviewMouseDown" Handler="ListBoxItem_OnPreviewMouseDownHandler"/>
+                        <Setter Property="IsEnabled" Value="{Binding IsPictureEnabled}"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <Border x:Name="RootBorder" BorderThickness="8" BorderBrush="#AFABAB" Background="White"
+                                            CornerRadius="32" Height="160" Width="160" Margin="5"
+                                            ClipToBounds="True">
+                                        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10">
+                                            <ContentPresenter ContentSource="{TemplateBinding Content}" />
+                                        </Grid>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <!--<Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="RootBorder" Property="BorderBrush" Value="#FFA09C9C"/>
+                                        </Trigger>-->
+                                        <DataTrigger Binding="{Binding IsPictureCovered}" Value="True">
+                                            <Setter TargetName="RootBorder" Property="Background" Value="#D0CECE"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding IsHighlighted}" Value="True">
+                                            <Setter TargetName="RootBorder" Property="BorderBrush" Value="#FF0000"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="models:MemoryPictureItem">
+                        <Border>
+                            <Image x:Name="PictureImage" Source="{Binding Picture}" Visibility="Collapsed"
+                                   Stretch="UniformToFill" SnapsToDevicePixels="True" ClipToBounds="True"/>
+                        </Border>
+                        <DataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding IsPictureVisibile}" Value="True">
+                                <Setter TargetName="PictureImage" Property="Visibility" Value="Visible"></Setter>
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <DrawingImage x:Key="Image.Ok.Normal">
+            <DrawingImage.Drawing>
+                <GeometryDrawing Brush="#FF30C361">
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry FillRule="Nonzero" Figures="M843.693969726563,293.609069824219L963.260131835938,413.174194335938 425.255859375,951.165161132813 66.5798873901367,592.504516601563 186.14501953125,472.947570800781 425.255859375,712.056335449219 843.693969726563,293.609069824219z" />
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <DrawingImage x:Key="Image.Ok.Dark">
+            <DrawingImage.Drawing>
+                <GeometryDrawing Brush="#FF2BAF57">
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry FillRule="Nonzero" Figures="M843.693969726563,293.609069824219L963.260131835938,413.174194335938 425.255859375,951.165161132813 66.5798873901367,592.504516601563 186.14501953125,472.947570800781 425.255859375,712.056335449219 843.693969726563,293.609069824219z" />
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <DrawingImage x:Key="Image.Ok.LightGray">
+            <DrawingImage.Drawing>
+                <GeometryDrawing Brush="#FFE6E6E6">
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry FillRule="Nonzero" Figures="M843.693969726563,293.609069824219L963.260131835938,413.174194335938 425.255859375,951.165161132813 66.5798873901367,592.504516601563 186.14501953125,472.947570800781 425.255859375,712.056335449219 843.693969726563,293.609069824219z" />
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <DrawingImage x:Key="Image.No.LightGray">
+            <DrawingImage.Drawing>
+                <GeometryDrawing Brush="#FFE6E6E6">
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry FillRule="Nonzero" Figures="M267.714813232422,121.815383911133L513.401428222656,367.506103515625 759.090087890625,121.815383911133 899.499938964844,262.219146728516 653.804138183594,507.910858154297 899.488708496094,753.598510742188 759.09521484375,893.998168945313 513.401428222656,648.307434082031 267.712768554688,893.99609375 127.314125061035,753.598510742188 373.000732421875,507.910858154297 127.310035705566,262.224273681641 267.714813232422,121.815383911133z" />
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="Image.No.Normal">
+            <DrawingImage.Drawing>
+                <GeometryDrawing Brush="#FF30C361">
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry FillRule="Nonzero" Figures="M267.714813232422,121.815383911133L513.401428222656,367.506103515625 759.090087890625,121.815383911133 899.499938964844,262.219146728516 653.804138183594,507.910858154297 899.488708496094,753.598510742188 759.09521484375,893.998168945313 513.401428222656,648.307434082031 267.712768554688,893.99609375 127.314125061035,753.598510742188 373.000732421875,507.910858154297 127.310035705566,262.224273681641 267.714813232422,121.815383911133z" />
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="Image.No.Dark">
+            <DrawingImage.Drawing>
+                <GeometryDrawing Brush="#FF2BAF57">
+                    <GeometryDrawing.Geometry>
+                        <PathGeometry FillRule="Nonzero" Figures="M267.714813232422,121.815383911133L513.401428222656,367.506103515625 759.090087890625,121.815383911133 899.499938964844,262.219146728516 653.804138183594,507.910858154297 899.488708496094,753.598510742188 759.09521484375,893.998168945313 513.401428222656,648.307434082031 267.712768554688,893.99609375 127.314125061035,753.598510742188 373.000732421875,507.910858154297 127.310035705566,262.224273681641 267.714813232422,121.815383911133z" />
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <ControlTemplate x:Key="OkButton.Template.Image" TargetType="Button">
+            <Border x:Name="RootBorder"
+                    BorderThickness="5" BorderBrush="#AFABAB" Background="White"
+                    CornerRadius="20" Height="100" Width="100"
+                    ClipToBounds="True" RenderTransformOrigin="0.5,0.5">
+                <Image x:Name="ContentImage" Source="{StaticResource Image.Ok.LightGray}" Stretch="Uniform" Margin="10"></Image>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="ContentImage" Property="Source" Value="{StaticResource Image.Ok.Normal}"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="ContentImage" Property="Source" Value="{StaticResource Image.Ok.Dark}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter TargetName="ContentImage" Property="Source" Value="{StaticResource Image.Ok.LightGray}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="NoButton.Template.Image" TargetType="Button">
+            <Border x:Name="RootBorder"
+                    BorderThickness="5" BorderBrush="#AFABAB" Background="White"
+                    CornerRadius="20" Height="100" Width="100"
+                    ClipToBounds="True" RenderTransformOrigin="0.5,0.5">
+                <Image x:Name="ContentImage" Source="{StaticResource Image.No.LightGray}" Stretch="Uniform" Margin="16"></Image>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="ContentImage" Property="Source" Value="{StaticResource Image.No.Normal}"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="ContentImage" Property="Source" Value="{StaticResource Image.No.Dark}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter TargetName="ContentImage" Property="Source" Value="{StaticResource Image.No.LightGray}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ConfirmButton.Tempate.Image" TargetType="Button">
+            <Border x:Name="RootBorder"
+                    BorderThickness="5" BorderBrush="#AFABAB" Background="White"
+                    CornerRadius="20" Height="100" Width="100"
+                    ClipToBounds="True" RenderTransformOrigin="0.5,0.5">
+                <Image x:Name="ContentImage" Source="{StaticResource Image.Ok.Normal}" Stretch="Uniform" Margin="10"></Image>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="ContentImage" Property="Source" Value="{StaticResource Image.Ok.Normal}"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="ContentImage" Property="Source" Value="{StaticResource Image.Ok.Dark}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter TargetName="RootBorder" Property="Opacity" Value="0.5"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <ListBox x:Name="PictureList" Style="{StaticResource Style.ListBox}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                 ItemsSource="{Binding ElementName=TheMemoryPictureListControl,Path=MemoryPictureItems}">
+        </ListBox>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 80 0">
+            <Button x:Name="ComfirmButton" Style="{StaticResource Style.Button.Base}"
+                    Content="确认"
+                    Visibility="Collapsed" IsEnabled="False" Click="ComfirmButton_OnClick">
+            </Button>
+            <Button x:Name="YesButton" Style="{StaticResource Style.Button.Base}"
+                    Content="是"
+                    Visibility="Collapsed" Click="YesButton_OnClick">
+            </Button>
+            <Button x:Name="NoButton" Style="{StaticResource Style.Button.Base}"
+                    Content="否" Margin="0 50 0 0"
+                    Visibility="Collapsed" Click="NoButton_OnClick">
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

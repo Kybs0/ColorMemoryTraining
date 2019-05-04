@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="PictureMemoryTraining.Views.Controls.UserIntroductionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PictureMemoryTraining.Views.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1200" Background="White">
+    <Grid Margin="200">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="指导语：" Grid.Row="0" HorizontalAlignment="Left" FontSize="30" Foreground="{StaticResource Brush.Text.Dark}"/>
+        <StackPanel Grid.Row="1" Margin="60 40 0 0" Width="900" HorizontalAlignment="Left">
+            <TextBlock TextWrapping="Wrap" FontSize="27" LineHeight="30" >
+                <Run Foreground="{StaticResource Brush.Text.Dark}">这是一个颜色辨认的小游戏，屏幕右侧分别有红、黄、蓝、绿4种颜色的按钮，你需要点击屏幕中的框，它会出现一个字，请注意看字的颜色，并尽快点击对应颜色的按钮，</Run>
+                <Run Foreground="Red">越快越好</Run>
+                <Run Foreground="{StaticResource Brush.Text.Dark}" >。</Run>
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="27" LineHeight="30" >
+                <Run Foreground="{StaticResource Brush.Text.Dark}" >你需要点击完所有的框。</Run>
+            </TextBlock>
+            <TextBlock TextWrapping="Wrap" FontSize="27" LineHeight="30" >
+                <Run Foreground="{StaticResource Brush.Text.Dark}" >若无其他问题，请点击空白出继续。</Run>
+            </TextBlock>
+        </StackPanel>
+
+    </Grid>
+</UserControl>
