@@ -162,46 +162,126 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Resource Include="Resources\MemoryPictures\一致\Black黑.jpg" />
-    <Resource Include="Resources\MemoryPictures\一致\Blue蓝.jpg" />
-    <Resource Include="Resources\MemoryPictures\一致\Green绿.jpg" />
-    <Resource Include="Resources\MemoryPictures\一致\Red红.jpg" />
-    <Resource Include="Resources\MemoryPictures\冲突\Black红.jpg" />
-    <Resource Include="Resources\MemoryPictures\冲突\Black绿.jpg" />
-    <Resource Include="Resources\MemoryPictures\冲突\Black蓝.jpg" />
-    <Resource Include="Resources\MemoryPictures\冲突\Blue红.jpg" />
-    <Resource Include="Resources\MemoryPictures\冲突\Blue绿.jpg" />
-    <Resource Include="Resources\MemoryPictures\冲突\Blue黑.jpg" />
-    <Resource Include="Resources\MemoryPictures\冲突\Green红.jpg" />
-    <Resource Include="Resources\MemoryPictures\冲突\Green蓝.jpg" />
-    <Resource Include="Resources\MemoryPictures\冲突\Green黑.jpg" />
-    <Resource Include="Resources\MemoryPictures\冲突\Red绿.jpg" />
-    <Resource Include="Resources\MemoryPictures\冲突\Red蓝.jpg" />
-    <Resource Include="Resources\MemoryPictures\冲突\Red黑.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Black热.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Black然.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Black照.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Black煮.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Black熏.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Black熟.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Blue蒙.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Blue蒸.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Blue蓄.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Blue蓉.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Blue蓑.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Blue蓬.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Green绩.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Green绳.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Green绵.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Green绷.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Green绸.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Green绽.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Red纤.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Red约.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Red级.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Red纨.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Red纪.jpg" />
-    <Resource Include="Resources\MemoryPictures\干扰\Red纫.jpg" />
+    <Content Include="Resources\MemoryPictures\一致\Black黑.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\一致\Blue蓝.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\一致\Green绿.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\一致\Red红.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\冲突\Black红.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\冲突\Black绿.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\冲突\Black蓝.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\冲突\Blue红.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\冲突\Blue绿.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\冲突\Blue黑.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\冲突\Green红.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\冲突\Green蓝.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\冲突\Green黑.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\冲突\Red绿.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\冲突\Red蓝.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\冲突\Red黑.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Black热.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Black然.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Black照.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Black煮.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Black熏.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Black熟.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Blue蒙.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Blue蒸.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Blue蓄.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Blue蓉.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Blue蓑.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Blue蓬.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Green绩.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Green绳.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Green绵.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Green绷.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Green绸.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Green绽.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Red纤.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Red约.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Red级.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Red纨.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Red纪.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\MemoryPictures\干扰\Red纫.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Resources\Images\Memory.ico" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

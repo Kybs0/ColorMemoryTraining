@@ -50,7 +50,10 @@ namespace PictureMemoryTraining.Views
             {
                 ClickMaxLimit = 2,
                 TrainingStage = TrainingStage.Learning
-            }, new UserTestRecordInfo());
+            }, new UserTestRecordInfo())
+            {
+                ListBoxColumns = 2
+            };
             memoryPictureListControl.MemoryPictureItems = items;
             memoryPictureListControl.PictureMemorized += MemoryPictureList_OnPictureMemorized;
             MemoryPictureListContentControl.Content = memoryPictureListControl;
@@ -137,7 +140,10 @@ namespace PictureMemoryTraining.Views
             {
                 ClickMaxLimit = 2,
                 TrainingStage = TrainingStage.SequentialTesting
-            }, new UserTestRecordInfo());
+            }, new UserTestRecordInfo())
+            {
+                ListBoxColumns = 2
+            };
             memoryPictureListControl.MemoryPictureItems = pictureItems;
             memoryPictureListControl.SequentialSelected += MemoryPictureList_OnSequentialSelected;
             MemoryPictureListContentControl.Content = memoryPictureListControl;
@@ -209,7 +215,10 @@ namespace PictureMemoryTraining.Views
             {
                 ClickMaxLimit = 2,
                 TrainingStage = TrainingStage.LocationTesting
-            }, new UserTestRecordInfo());
+            }, new UserTestRecordInfo())
+            {
+                ListBoxColumns = 2
+            };
             memoryPictureListControl.MemoryPictureItems = pictureItems;
             memoryPictureListControl.PictureLocationComfirmed += MemoryPictureList_OnPictureLocationComfirmed;
             MemoryPictureListContentControl.Content = memoryPictureListControl;
@@ -264,7 +273,7 @@ namespace PictureMemoryTraining.Views
         /// <param name="resultTipText"></param>
         private void SetResultTip(string resultTipText)
         {
-            ResultTipShowing?.Invoke(this,resultTipText);
+            ResultTipShowing?.Invoke(this, resultTipText);
         }
 
         #endregion

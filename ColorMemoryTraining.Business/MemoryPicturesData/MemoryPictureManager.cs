@@ -23,7 +23,7 @@ namespace PictureMemoryTraining.Business.MemoryPicturesData
                 list.AddRange(allFiles.Select(i => GetPictureInfo(i)));
             }
 
-            if (list.Count < 0)
+            if (list.Count < 1)
             {
                 throw new InvalidOperationException($"图片配置数量小于{0}张！");
             }
@@ -37,7 +37,7 @@ namespace PictureMemoryTraining.Business.MemoryPicturesData
         {
             var list = new List<ColorPictureInfo>();
             var baseDirectory = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
-            var memoryPicturesFolder = Path.Combine(baseDirectory, @"Resources\MemoryPictures\冲突");
+            var memoryPicturesFolder = Path.Combine(baseDirectory, @"Resources\MemoryPictures\干扰");
             if (Directory.Exists(memoryPicturesFolder))
             {
                 var allFiles = FolderUtil.GetAllFiles(memoryPicturesFolder);
@@ -58,14 +58,14 @@ namespace PictureMemoryTraining.Business.MemoryPicturesData
         {
             var list = new List<ColorPictureInfo>();
             var baseDirectory = AppDomain.CurrentDomain.SetupInformation.ApplicationBase;
-            var memoryPicturesFolder = Path.Combine(baseDirectory, @"Resources\MemoryPictures\冲突");
+            var memoryPicturesFolder = Path.Combine(baseDirectory, @"Resources\MemoryPictures\一致");
             if (Directory.Exists(memoryPicturesFolder))
             {
                 var allFiles = FolderUtil.GetAllFiles(memoryPicturesFolder);
                 list.AddRange(allFiles.Select(i=> GetPictureInfo(i)));
             }
 
-            if (list.Count<0)
+            if (list.Count<1)
             {
                 throw new InvalidOperationException($"图片配置数量小于{0}张！");
             }

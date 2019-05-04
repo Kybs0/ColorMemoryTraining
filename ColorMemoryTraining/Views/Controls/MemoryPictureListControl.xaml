@@ -10,11 +10,11 @@
              d:DesignHeight="450" d:DesignWidth="800" x:Name="TheMemoryPictureListControl">
     <UserControl.Resources>
         <Style x:Key="Style.ListBox" TargetType="ListBox">
-            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="ItemsPanel">
                 <Setter.Value>
                     <ItemsPanelTemplate>
-                        <UniformGrid Rows="4" Columns="4"></UniformGrid>
+                        <UniformGrid Columns="{Binding ElementName=TheMemoryPictureListControl,Path=ListBoxColumns}" />
                     </ItemsPanelTemplate>
                 </Setter.Value>
             </Setter>

@@ -67,6 +67,15 @@ namespace PictureMemoryTraining.Views
             set { SetValue(TrainingStageSettingProperty, value); }
         }
 
+        public static readonly DependencyProperty ListBoxColumnsProperty = DependencyProperty.Register(
+            "ListBoxColumns", typeof(int), typeof(MemoryPictureListControl), new PropertyMetadata(4));
+
+        public int ListBoxColumns
+        {
+            get { return (int) GetValue(ListBoxColumnsProperty); }
+            set { SetValue(ListBoxColumnsProperty, value); }
+        }
+
         #endregion
 
         #region ListBoxItem事件

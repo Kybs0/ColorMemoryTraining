@@ -97,6 +97,21 @@ namespace PictureMemoryTraining.Views
             var items = MemoryPictureItemsManager.GetTest3MemoryPictures();
             EnterTestingView(sender, items, UserDetailTestRecord.Group3TestInfo);
         }
+        private void Test4Button_OnClick(object sender, RoutedEventArgs e)
+        {
+            var items = MemoryPictureItemsManager.GetTest4MemoryPictures();
+            EnterTestingView(sender, items, UserDetailTestRecord.Group4TestInfo);
+        }
+        private void Test5Button_OnClick(object sender, RoutedEventArgs e)
+        {
+            var items = MemoryPictureItemsManager.GetTest5MemoryPictures();
+            EnterTestingView(sender, items, UserDetailTestRecord.Group5TestInfo);
+        }
+        private void Test6Button_OnClick(object sender, RoutedEventArgs e)
+        {
+            var items = MemoryPictureItemsManager.GetTest6MemoryPictures();
+            EnterTestingView(sender, items, UserDetailTestRecord.Group6TestInfo);
+        }
         private void EnterTestingView(object sender, List<MemoryPictureItem> items, GroupTestInfo groupTestInfo)
         {
             var memoryTestView = new MemoryTestView(items, groupTestInfo);

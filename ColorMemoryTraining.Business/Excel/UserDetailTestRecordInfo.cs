@@ -10,6 +10,9 @@ namespace PictureMemoryTraining.Business.Excel
         public GroupTestInfo Group1TestInfo = new GroupTestInfo();
         public GroupTestInfo Group2TestInfo = new GroupTestInfo();
         public GroupTestInfo Group3TestInfo = new GroupTestInfo();
+        public GroupTestInfo Group4TestInfo = new GroupTestInfo();
+        public GroupTestInfo Group5TestInfo = new GroupTestInfo();
+        public GroupTestInfo Group6TestInfo = new GroupTestInfo();
     }
 
     public class GroupTestInfo

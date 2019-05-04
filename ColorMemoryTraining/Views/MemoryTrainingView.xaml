@@ -50,9 +50,9 @@
                         <Button x:Name="Test3Button" Content="第3组" Click="Test3Button_OnClick"></Button>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <Button x:Name="Test4Button" Content="第4组" Click="Test1Button_OnClick"></Button>
-                        <Button x:Name="Test5Button" Content="第5组" Click="Test2Button_OnClick"></Button>
-                        <Button x:Name="Test6Button" Content="第6组" Click="Test3Button_OnClick"></Button>
+                        <Button x:Name="Test4Button" Content="第4组" Click="Test4Button_OnClick"></Button>
+                        <Button x:Name="Test5Button" Content="第5组" Click="Test5Button_OnClick"></Button>
+                        <Button x:Name="Test6Button" Content="第6组" Click="Test6Button_OnClick"></Button>
                     </StackPanel>
                 </StackPanel>
             </GroupBox>
