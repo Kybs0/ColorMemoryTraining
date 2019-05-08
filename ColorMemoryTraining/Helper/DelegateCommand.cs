@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace PictureMemoryTraining.Helper
+namespace ColorMemoryTraining.Helper
 {
     internal class DelegateCommand<T> : ICommand
     {

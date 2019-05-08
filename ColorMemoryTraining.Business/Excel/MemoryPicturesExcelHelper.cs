@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Aspose.Cells;
 
-namespace PictureMemoryTraining.Business.Excel
+namespace ColorMemoryTraining.Business.Excel
 {
     public class MemoryPicturesExcelHelper
     {

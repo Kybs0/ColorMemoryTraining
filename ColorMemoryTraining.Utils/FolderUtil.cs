@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.AccessControl;
 using System.Windows.Forms;
 
-namespace PictureMemoryTraining.Utils
+namespace ColorMemoryTraining.Utils
 {
     public static class FolderUtil
     {

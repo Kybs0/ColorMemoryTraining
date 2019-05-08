@@ -1,7 +1,7 @@
 ﻿using System;
 using Timer = System.Timers.Timer;
 
-namespace PictureMemoryTraining.Business.Excel
+namespace ColorMemoryTraining.Business.Excel
 {
     public class UserInfoMode : NotifyPropertyChanged
     {

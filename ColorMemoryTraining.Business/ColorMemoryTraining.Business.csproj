@@ -7,8 +7,8 @@
     <ProjectGuid>{2204F783-2F84-4296-941C-05D36D5C5A2F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PictureMemoryTraining.Business</RootNamespace>
-    <AssemblyName>PictureMemoryTraining.Business</AssemblyName>
+    <RootNamespace>ColorMemoryTraining.Business</RootNamespace>
+    <AssemblyName>ColorMemoryTraining.Business</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

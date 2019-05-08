@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PictureMemoryTraining.Business.Excel
+namespace ColorMemoryTraining.Business.Excel
 {
     public class UserDetailTestRecordInfo
     {

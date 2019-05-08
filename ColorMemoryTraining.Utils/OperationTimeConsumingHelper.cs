@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PictureMemoryTraining.Utils
+namespace ColorMemoryTraining.Utils
 {
     /// <summary>
     /// 操作耗时辅助类

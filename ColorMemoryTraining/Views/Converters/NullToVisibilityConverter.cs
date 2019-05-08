@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace PictureMemoryTraining.Views.Converters
+namespace ColorMemoryTraining.Views.Converters
 {
     class NullToVisibilityConverter : IValueConverter
     {

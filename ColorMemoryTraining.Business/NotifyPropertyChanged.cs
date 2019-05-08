@@ -5,9 +5,9 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using PictureMemoryTraining.Business.Annotations;
+using ColorMemoryTraining.Business.Annotations;
 
-namespace PictureMemoryTraining.Business
+namespace ColorMemoryTraining.Business
 {
     public class NotifyPropertyChanged : INotifyPropertyChanged
     {

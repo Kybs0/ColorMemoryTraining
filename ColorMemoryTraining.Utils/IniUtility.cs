@@ -4,7 +4,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace PictureMemoryTraining.Utils
+namespace ColorMemoryTraining.Utils
 {
     public class IniUtility
     {

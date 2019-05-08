@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
-namespace PictureMemoryTraining.Utils
+namespace ColorMemoryTraining.Utils
 {
     public static class TreeExtensions
     {

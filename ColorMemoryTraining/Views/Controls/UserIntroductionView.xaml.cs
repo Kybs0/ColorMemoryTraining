@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PictureMemoryTraining.Views.Controls
+namespace ColorMemoryTraining.Views.Controls
 {
     /// <summary>
     /// UserIntroductionView.xaml 的交互逻辑

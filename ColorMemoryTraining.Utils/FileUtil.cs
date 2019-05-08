@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Security.AccessControl;
 
-namespace PictureMemoryTraining.Utils
+namespace ColorMemoryTraining.Utils
 {
     public class FileUtil
     {

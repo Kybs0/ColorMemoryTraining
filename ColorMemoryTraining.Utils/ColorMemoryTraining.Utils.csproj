@@ -7,8 +7,8 @@
     <ProjectGuid>{7F7C3FFF-A809-44C4-97FA-6D9D506D9CB6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PictureMemoryTraining.Utils</RootNamespace>
-    <AssemblyName>PictureMemoryTraining.Utils</AssemblyName>
+    <RootNamespace>ColorMemoryTraining.Utils</RootNamespace>
+    <AssemblyName>ColorMemoryTraining.Utils</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -48,7 +48,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ScreenSizeHelper.cs" />
     <Compile Include="RegexConst.cs" />
     <Compile Include="ListExtensions.cs" />
     <Compile Include="DriveUtil.cs" />

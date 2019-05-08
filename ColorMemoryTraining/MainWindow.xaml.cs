@@ -1,8 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using PictureMemoryTraining.Utils;
+using ColorMemoryTraining.Utils;
 
-namespace PictureMemoryTraining
+namespace ColorMemoryTraining
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑

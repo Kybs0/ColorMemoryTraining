@@ -12,10 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PictureMemoryTraining.Business.Excel;
-using PictureMemoryTraining.Views.Models;
+using ColorMemoryTraining.Business.Excel;
+using ColorMemoryTraining.Views.Models;
 
-namespace PictureMemoryTraining.Views
+namespace ColorMemoryTraining.Views
 {
     /// <summary>
     /// EditUserProfileView.xaml 的交互逻辑

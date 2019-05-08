@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PictureMemoryTraining.Views.Models
+namespace ColorMemoryTraining.Views.Models
 {
     public class MemorizedMemoryPictureItem
     {
@@ -25,5 +25,7 @@ namespace PictureMemoryTraining.Views.Models
         /// 是否与原有位置一致（此为用户提交）
         /// </summary>
         public bool IsMatchedByUserComfirmed { get; set; }
+
+        public string ColorByUserCommit { get; set; }
     }
 }

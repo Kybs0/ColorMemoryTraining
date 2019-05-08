@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PictureMemoryTraining.Business.MemoryPicturesData;
-using PictureMemoryTraining.Utils;
+using ColorMemoryTraining.Utils;
+using ColorMemoryTraining.Business.MemoryPicturesData;
 
-namespace PictureMemoryTraining.Views.Models
+namespace ColorMemoryTraining.Views.Models
 {
     public static class MemoryPictureItemsManager
     {

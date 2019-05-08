@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using PictureMemoryTraining.Utils;
+using ColorMemoryTraining.Utils;
 
-namespace PictureMemoryTraining.Views.Controls
+namespace ColorMemoryTraining.Views.Controls
 {
     public class LimitedTextBox : TextBox
     {

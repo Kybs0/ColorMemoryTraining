@@ -13,20 +13,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PictureMemoryTraining.Business.Excel;
-using PictureMemoryTraining.Business.MemoryPicturesData;
-using PictureMemoryTraining.Views.Models;
+using ColorMemoryTraining.Business.Excel;
+using ColorMemoryTraining.Views.Models;
 using Path = System.IO.Path;
 
-namespace PictureMemoryTraining.Views
+namespace ColorMemoryTraining.Views
 {
     /// <summary>
     /// 风格图片列表控件
     /// </summary>
-    public partial class MemoryPictureListControl : UserControl
+    public partial class FamiliarMemoryListControl : UserControl
     {
         private UserTestRecordInfo _testRecordInfo = null;
-        public MemoryPictureListControl(TrainingStageSetting trainingStageSetting, UserTestRecordInfo testRecordInfo)
+        public FamiliarMemoryListControl(TrainingStageSetting trainingStageSetting, UserTestRecordInfo testRecordInfo)
         {
             InitializeComponent();
             _testRecordInfo = testRecordInfo;
@@ -38,19 +37,18 @@ namespace PictureMemoryTraining.Views
             TrainingStageSetting = trainingStageSetting;
             if (trainingStageSetting.TrainingStage == TrainingStage.SequentialTesting)
             {
-                ComfirmButton.Visibility = Visibility.Visible;
+                SequentialConfirmPanel.Visibility = Visibility.Visible;
             }
             else if (trainingStageSetting.TrainingStage == TrainingStage.LocationTesting)
             {
-                YesButton.Visibility = Visibility.Visible;
-                NoButton.Visibility = Visibility.Visible;
+                LocationComfirmPanel.Visibility = Visibility.Visible;
             }
         }
 
         #region 属性
 
         public static readonly DependencyProperty MemoryPictureItemsProperty = DependencyProperty.Register(
-            "MemoryPictureItems", typeof(List<MemoryPictureItem>), typeof(MemoryPictureListControl), new PropertyMetadata(default(List<MemoryPictureItem>)));
+            "MemoryPictureItems", typeof(List<MemoryPictureItem>), typeof(FamiliarMemoryListControl), new PropertyMetadata(default(List<MemoryPictureItem>)));
 
         public List<MemoryPictureItem> MemoryPictureItems
         {
@@ -59,7 +57,7 @@ namespace PictureMemoryTraining.Views
         }
 
         public static readonly DependencyProperty TrainingStageSettingProperty = DependencyProperty.Register(
-            "TrainingStageSetting", typeof(TrainingStageSetting), typeof(MemoryPictureListControl), new PropertyMetadata(default(TrainingStageSetting)));
+            "TrainingStageSetting", typeof(TrainingStageSetting), typeof(FamiliarMemoryListControl), new PropertyMetadata(default(TrainingStageSetting)));
 
         public TrainingStageSetting TrainingStageSetting
         {
@@ -68,11 +66,11 @@ namespace PictureMemoryTraining.Views
         }
 
         public static readonly DependencyProperty ListBoxColumnsProperty = DependencyProperty.Register(
-            "ListBoxColumns", typeof(int), typeof(MemoryPictureListControl), new PropertyMetadata(4));
+            "ListBoxColumns", typeof(int), typeof(FamiliarMemoryListControl), new PropertyMetadata(4));
 
         public int ListBoxColumns
         {
-            get { return (int) GetValue(ListBoxColumnsProperty); }
+            get { return (int)GetValue(ListBoxColumnsProperty); }
             set { SetValue(ListBoxColumnsProperty, value); }
         }
 
@@ -139,12 +137,25 @@ namespace PictureMemoryTraining.Views
         }
 
         public event EventHandler<LocationMemoryPictureItem> PictureLocationComfirmed;
-        private async void YesButton_OnClick(object sender, RoutedEventArgs e)
+
+        private async void RedButton_OnClick(object sender, RoutedEventArgs e)
         {
-            await ComfirmLocation(sender, true);
+            await ComfirmLocation(sender, "Red");
+        }
+        private async void BlackButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            await ComfirmLocation(sender, "Black");
+        }
+        private async void BlueButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            await ComfirmLocation(sender, "Blue");
+        }
+        private async void GreenButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            await ComfirmLocation(sender, "Green");
         }
 
-        private async Task ComfirmLocation(object sender, bool comfirmed)
+        private async Task ComfirmLocation(object sender, string colorByUserCommit)
         {
             this.IsEnabled = false;
             if (sender is Button button)
@@ -158,16 +169,11 @@ namespace PictureMemoryTraining.Views
                 {
                     PictureItem = memoryPictureItem,
                     Location = MemoryPictureItems.IndexOf(memoryPictureItem),
-                    IsMatchedByUserComfirmed = comfirmed
+                    ColorByUserCommit = colorByUserCommit
                 });
                 button.IsEnabled = true;
             }
             this.IsEnabled = true;
-        }
-
-        private async void NoButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            await ComfirmLocation(sender, false);
         }
 
         #endregion
@@ -217,7 +223,7 @@ namespace PictureMemoryTraining.Views
                 }
             }
 
-            ComfirmButton.IsEnabled = _selectedSequentialPictureList.Count >= TrainingStageSetting.ClickMaxLimit;
+            SequentialConfirmPanel.IsEnabled = _selectedSequentialPictureList.Count >= TrainingStageSetting.ClickMaxLimit;
         }
 
         private void ComfirmButton_OnClick(object sender, RoutedEventArgs e)
@@ -306,7 +312,6 @@ namespace PictureMemoryTraining.Views
         #endregion
 
         #endregion
-
 
     }
 }

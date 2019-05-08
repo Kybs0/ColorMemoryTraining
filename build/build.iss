@@ -1,11 +1,11 @@
-#define MyAppName "PictureMemoryTraining"
-#define MyAppChineseName "Í¼Æ¬¼ÇÒä"
+#define MyAppName "ColorMemoryTraining"
+#define MyAppChineseName "ÎÄ×Ö¼ÇÒä"
 #define MyAppVersion "1.0"
 #define MyAppPublisher "dotnet school"
 #define MyAppURL "https://dotnet-campus.github.io/"
 
 [Setup]
-AppId={{AEDA7075-70DC-479E-B796-344517C2C959}
+AppId={{AEDA7075-70DC-479E-B796-344517C2C940}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppPublisher={#MyAppPublisher}

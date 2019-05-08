@@ -2,9 +2,9 @@
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using PictureMemoryTraining.Business.Annotations;
+using ColorMemoryTraining.Business.Annotations;
 
-namespace PictureMemoryTraining.Business
+namespace ColorMemoryTraining.Business
 {
     public static class ImageHelper
     {

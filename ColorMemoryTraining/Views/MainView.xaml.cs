@@ -12,11 +12,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using PictureMemoryTraining.Business.Excel;
-using PictureMemoryTraining.Views.Models;
+using ColorMemoryTraining.Business.Excel;
+using ColorMemoryTraining.Views.Models;
 using Path = System.Windows.Shapes.Path;
 
-namespace PictureMemoryTraining.Views
+namespace ColorMemoryTraining.Views
 {
     /// <summary>
     /// MainView.xaml 的交互逻辑

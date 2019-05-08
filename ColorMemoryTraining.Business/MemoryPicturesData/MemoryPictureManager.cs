@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using PictureMemoryTraining.Utils;
+using ColorMemoryTraining.Utils;
 
-namespace PictureMemoryTraining.Business.MemoryPicturesData
+namespace ColorMemoryTraining.Business.MemoryPicturesData
 {
     public class MemoryPictureManager
     {

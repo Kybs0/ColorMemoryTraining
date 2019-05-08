@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
-using PictureMemoryTraining.Business;
+using ColorMemoryTraining.Business;
 
-namespace PictureMemoryTraining.Views.Models
+namespace ColorMemoryTraining.Views.Models
 {
     /// <summary>
     /// 记忆图片Item

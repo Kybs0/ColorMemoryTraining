@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="PictureMemoryTraining.Views.MemoryPictureListControl"
+﻿<UserControl x:Class="ColorMemoryTraining.Views.TestMemoryListControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PictureMemoryTraining.Views"
-             xmlns:models="clr-namespace:PictureMemoryTraining.Views.Models"
-             xmlns:helper="clr-namespace:PictureMemoryTraining.Helper"
+             xmlns:local="clr-namespace:ColorMemoryTraining.Views"
+             xmlns:models="clr-namespace:ColorMemoryTraining.Views.Models"
+             xmlns:helper="clr-namespace:ColorMemoryTraining.Helper"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" x:Name="TheMemoryPictureListControl">
     <UserControl.Resources>
@@ -182,24 +182,48 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+
+        <ControlTemplate x:Key="ConfirmButton.Tempate.Color" TargetType="Button">
+            <Grid>
+                <Ellipse x:Name="ColorEllipse" Width="60" Height="60" Stroke="#AFABAB" StrokeThickness="4" Fill="{TemplateBinding Foreground}"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="ColorEllipse" Property="Stroke" Value="{StaticResource Brush.Text.Deep}"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="ColorEllipse" Property="Stroke" Value="{StaticResource Brush.Text.Dark}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
     </UserControl.Resources>
     <Grid>
         <ListBox x:Name="PictureList" Style="{StaticResource Style.ListBox}" HorizontalAlignment="Center" VerticalAlignment="Center"
                  ItemsSource="{Binding ElementName=TheMemoryPictureListControl,Path=MemoryPictureItems}">
         </ListBox>
 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 80 0">
-            <Button x:Name="ComfirmButton" Style="{StaticResource Style.Button.Base}"
-                    Content="确认"
-                    Visibility="Collapsed" IsEnabled="False" Click="ComfirmButton_OnClick">
+        <StackPanel x:Name="SequentialConfirmPanel" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 80 0" Visibility="Collapsed" IsEnabled="False">
+            <Button x:Name="ConfirmButton" Style="{StaticResource Style.Button.Base}"
+                     Click="ComfirmButton_OnClick" Content="确认">
             </Button>
-            <Button x:Name="YesButton" Style="{StaticResource Style.Button.Base}"
-                    Content="是"
-                    Visibility="Collapsed" Click="YesButton_OnClick">
+        </StackPanel>
+
+        <StackPanel x:Name="LocationComfirmPanel" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 80 0" Visibility="Collapsed" >
+            <Button x:Name="RedButton" Style="{StaticResource Style.Button.Base}"
+                    Template="{StaticResource ConfirmButton.Tempate.Color}" Foreground="#FF0000"
+                    Click="RedButton_OnClick">
             </Button>
-            <Button x:Name="NoButton" Style="{StaticResource Style.Button.Base}"
-                    Content="否" Margin="0 50 0 0"
-                    Visibility="Collapsed" Click="NoButton_OnClick">
+            <Button x:Name="BlackButton" Style="{StaticResource Style.Button.Base}"
+                    Template="{StaticResource ConfirmButton.Tempate.Color}" Foreground="#000000" Margin="0 50 0 0"
+                    Click="BlackButton_OnClick">
+            </Button>
+            <Button x:Name="BlueButton" Style="{StaticResource Style.Button.Base}"
+                    Template="{StaticResource ConfirmButton.Tempate.Color}" Foreground="#0432FF" Margin="0 50 0 0"
+                    Click="BlueButton_OnClick">
+            </Button>
+            <Button x:Name="GreenButton" Style="{StaticResource Style.Button.Base}"
+                    Template="{StaticResource ConfirmButton.Tempate.Color}" Foreground="#00FA00" Margin="0 50 0 0"
+                    Click="GreenButton_OnClick">
             </Button>
         </StackPanel>
     </Grid>

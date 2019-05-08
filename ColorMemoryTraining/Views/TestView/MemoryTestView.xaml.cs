@@ -13,13 +13,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PictureMemoryTraining.Business.Excel;
-using PictureMemoryTraining.Utils;
-using PictureMemoryTraining.Views.Models;
+using ColorMemoryTraining.Business.Excel;
+using ColorMemoryTraining.Views.Models;
+using ColorMemoryTraining.Utils;
 using Path = System.IO.Path;
 using Timer = System.Timers.Timer;
 
-namespace PictureMemoryTraining.Views
+namespace ColorMemoryTraining.Views
 {
     /// <summary>
     /// MemoryTestView.xaml 的交互逻辑
@@ -65,7 +65,7 @@ namespace PictureMemoryTraining.Views
                 }
             }
 
-            var memoryPictureListControl = new MemoryPictureListControl(new TrainingStageSetting()
+            var memoryPictureListControl = new TestMemoryListControl(new TrainingStageSetting()
             {
                 ClickMaxLimit = clickMaxLimit,
                 TrainingStage = TrainingStage.Learning
@@ -202,7 +202,7 @@ namespace PictureMemoryTraining.Views
             {
                 memoryPictureItem.IsPictureVisibile = true;
             }
-            var memoryPictureListControl = new MemoryPictureListControl(new TrainingStageSetting()
+            var memoryPictureListControl = new TestMemoryListControl(new TrainingStageSetting()
             {
                 ClickMaxLimit = 3,
                 TrainingStage = TrainingStage.SequentialTesting
@@ -272,7 +272,7 @@ namespace PictureMemoryTraining.Views
             visibileRandomPictureItem.IsPictureVisibile = true;
 
             //添加控件内容
-            var memoryPictureListControl = new MemoryPictureListControl(new TrainingStageSetting()
+            var memoryPictureListControl = new TestMemoryListControl(new TrainingStageSetting()
             {
                 ClickMaxLimit = 3,
                 TrainingStage = TrainingStage.LocationTesting
@@ -302,7 +302,7 @@ namespace PictureMemoryTraining.Views
             });
 
             _selectedLocationTestingPictureList.Add(checkedPictureItem);
-            if (sender is MemoryPictureListControl memoryPictureListControl &&
+            if (sender is TestMemoryListControl memoryPictureListControl &&
                 _selectedLocationTestingPictureList.Count >= memoryPictureListControl.TrainingStageSetting.ClickMaxLimit)
             {
                 ////完成一轮测试

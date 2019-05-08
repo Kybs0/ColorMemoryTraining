@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PictureMemoryTraining.Business;
+using ColorMemoryTraining.Business;
 
-namespace PictureMemoryTraining.Views.Models
+namespace ColorMemoryTraining.Views.Models
 {
     public class TrainingStageSetting
     {

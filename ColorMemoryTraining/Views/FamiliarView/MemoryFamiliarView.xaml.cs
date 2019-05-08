@@ -1,23 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using PictureMemoryTraining.Business.Excel;
-using PictureMemoryTraining.Utils;
-using PictureMemoryTraining.Views.Models;
+using ColorMemoryTraining.Business.Excel;
+using ColorMemoryTraining.Utils;
+using ColorMemoryTraining.Views.Models;
 
-namespace PictureMemoryTraining.Views
+namespace ColorMemoryTraining.Views
 {
     /// <summary>
     /// MemoryFamiliarView.xaml 的交互逻辑
@@ -46,7 +39,7 @@ namespace PictureMemoryTraining.Views
                 memoryPictureItem.IsPictureVisibile = true;
             }
 
-            var memoryPictureListControl = new MemoryPictureListControl(new TrainingStageSetting()
+            var memoryPictureListControl = new FamiliarMemoryListControl(new TrainingStageSetting()
             {
                 ClickMaxLimit = 2,
                 TrainingStage = TrainingStage.Learning
@@ -136,7 +129,7 @@ namespace PictureMemoryTraining.Views
             {
                 memoryPictureItem.IsPictureVisibile = true;
             }
-            var memoryPictureListControl = new MemoryPictureListControl(new TrainingStageSetting()
+            var memoryPictureListControl = new FamiliarMemoryListControl(new TrainingStageSetting()
             {
                 ClickMaxLimit = 2,
                 TrainingStage = TrainingStage.SequentialTesting
@@ -211,7 +204,7 @@ namespace PictureMemoryTraining.Views
             visibileRandomPictureItem.IsPictureVisibile = true;
 
             //添加控件内容
-            var memoryPictureListControl = new MemoryPictureListControl(new TrainingStageSetting()
+            var memoryPictureListControl = new FamiliarMemoryListControl(new TrainingStageSetting()
             {
                 ClickMaxLimit = 2,
                 TrainingStage = TrainingStage.LocationTesting
@@ -237,7 +230,7 @@ namespace PictureMemoryTraining.Views
             var resultTipText = _memorizedPictureList.Any(i => i.PictureItem == item.PictureItem && i.Location == item.Location) ? "正确" : "错误";
             SetResultTip(resultTipText);
 
-            if (sender is MemoryPictureListControl memoryPictureListControl &&
+            if (sender is FamiliarMemoryListControl memoryPictureListControl &&
                 _selectedLocationTestingPictureList.Count >= memoryPictureListControl.TrainingStageSetting.ClickMaxLimit)
             {
                 TestingCompleted?.Invoke(this, EventArgs.Empty);
